@@ -13,7 +13,7 @@ The more comprehensive documentation of RELION is stored on the [Wiki](http://ww
 
 For EER data processing, please read instructions in [our wiki](https://www3.mrc-lmb.cam.ac.uk/relion/index.php/Image_compression#Falcon4_EER) carefully. 
 
-RELION source code are from: https://github.com/3dem/relion. 
+- RELION source code are from: https://github.com/3dem/relion. 
 
 ## Installation
 
