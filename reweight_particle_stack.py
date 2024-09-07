@@ -234,7 +234,7 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
 
         #Create numpy list of random numbers withOUT replacement to be removed
 	tmparray = []
-	tmparray = open(tmp,'r').readlines()
+	tmparray = open(tmp,'r').readlines().strip()
 	print(tmparray)
         toberemoved=np.random.choice(tmparray,remove,replace=False)
 	if debug is True:
