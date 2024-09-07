@@ -169,7 +169,7 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
         while counter <= tot+headernum:
             line=linecache.getline(euler,counter)
 
-            if len(line) < 40:
+            if len(line) < 480:
                 counter=counter+1
 		continue
 
@@ -218,7 +218,7 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
             counter=counter+1
             particlecounter=particlecounter+1
 	if debug is True:
-		print "Number of bad particles counted is: %i" %(badcounter)	
+		print "Number of bad particles need to be removed is: %i" %(badcounter)	
 		print "Number of total particles is: %i" %(particlecounter)
         out.close()
 
