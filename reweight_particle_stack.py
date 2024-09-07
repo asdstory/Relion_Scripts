@@ -225,7 +225,8 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
         #Get number of lines in tmpfile
         numLinesTemptFile=len(open(tmp,'r').readlines())
 	if debug is True:
-		print "Number of lines in tmpfile is " (str(numLinesTemptFile))
+		print "Number of lines in tmpfile is " (numLinesTemptFile)
+		
         #Throw error if number to be removed is greater than number in group
         if remove>numLinesTemptFile:
             print 'Error: Number of particles to removed from euler angle range is greater than the number of particles in given group. Check tmpfile122.txt for number of particles that are in euler angle group.Exiting'
