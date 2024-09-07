@@ -305,9 +305,9 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
             #Get line from file
             particle_line=linecache.getline(particle,particle_num)
 
-            if debug is True:
-                print 'Particle %i is on line %i in %s' %(counter,particle_num,particle)
-                print 'Particle line: %s' %(particle_line)
+            #if debug is True:
+                #print 'Particle %i is on line %i in %s' %(counter,particle_num,particle)
+                #print 'Particle line: %s' %(particle_line)
 
             if remove_flag == 0:
                 particlewrite.write(particle_line)
