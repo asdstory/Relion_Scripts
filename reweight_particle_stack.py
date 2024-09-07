@@ -110,8 +110,7 @@ def getNumberofLinesRelionHeader(star):
         if len(line) < 50:
             tot=tot+1
     f1.close()
-    if debug is True: 
-	    print "total num of lines in header session = %i" %(tot)
+    print "total num of lines in header session = %i" %(tot)
     return tot
 
 #==============================
