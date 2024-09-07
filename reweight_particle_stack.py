@@ -87,16 +87,17 @@ def checkConflicts(params):
 #===============================
 def getRelionColumnIndex(star,rlnvariable):
 
-    counter=50
+    counter=5000
     i=1
 
-    while i<=50:
+    while i<=5000:
 
         line=linecache.getline(star,i)
 
         if len(line)>0:
             if len(line.split())>1:
                 if line.split()[0] == rlnvariable:
+		    print "The euler parameter you want to remove particles - ", rlnvariable, "- is at column #", line.split()[1][1:]
                     return line.split()[1][1:]
 
         i=i+1
