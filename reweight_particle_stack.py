@@ -225,8 +225,7 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
         #Get number of lines in tmpfile
         numLinesTemptFile=len(open(tmp,'r').readlines())
 	if debug is True:
-		print "Number of lines in tmpfile is " 
-		print (numLinesTemptFile)
+		print "Number of lines in tmpfile is: %i " %(numLinesTemptFile)
 		
         #Throw error if number to be removed is greater than number in group
         if remove>numLinesTemptFile:
