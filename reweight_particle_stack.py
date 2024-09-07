@@ -181,7 +181,7 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
 
             flag=0
             if debug is True:
-		print line
+		#print line
                 print "rot=%s"%(rot)
                 print colrot 
 		print tilt
@@ -233,7 +233,9 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
 
         #Create numpy list of random numbers withOUT replacement to be removed
         toberemoved=np.random.choice(numLinesTemptFile,remove,replace=False)
-
+	if debug is True:
+		print "numpy list of random numbers is: %i" %(toberemoved)	
+		
         #Create new text file from which actual bad particle numbers will be stored
         tmp2='tmpfile122_sel.txt'
         if os.path.exists(tmp2):
