@@ -58,18 +58,18 @@ def checkConflicts(params):
 #===============================
 def getRelionColumnIndex(star,rlnvariable):
 
-    counter=50
+    counter=50000
     i=1
 
-    while i<=50:
+    while i<=50000:
 
         line=linecache.getline(star,i)
-        print (line)
 
         if len(line)>0:
             if len(line.split())>1:
                 if line.split()[0] == rlnvariable:
                     return line.split()[1][1:]
+                    print "The rlnvariable is at column #", (line.split()[1][1:])
 
         i=i+1
 
