@@ -290,8 +290,8 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
             remove_flag=0
 	    if debug is True:
 		#print line
-		print counter
-		print counter-header_particle
+		#print counter
+		#print counter-header_particle
             if (counter-header_particle) in badparticlelist:
                 remove_flag=1
 
