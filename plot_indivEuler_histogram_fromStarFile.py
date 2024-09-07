@@ -68,7 +68,7 @@ def getRelionColumnIndex(star,rlnvariable):
         if len(line)>0:
             if len(line.split())>1:
                 if line.split()[0] == rlnvariable:
-                    print "The euler parameter you want ", rlnvariable, "is at column #", line.split()[1][1:]
+                    print "The euler parameter you want to plot particle distribution - ", rlnvariable, "- is at column #", line.split()[1][1:]
                     return line.split()[1][1:]                  
 
         i=i+1
