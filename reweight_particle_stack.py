@@ -235,7 +235,8 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
         #Create numpy list of random numbers withOUT replacement to be removed
         toberemoved=np.random.choice(numLinesTemptFile,remove,replace=False)
 	if debug is True:
-		print "numpy list of random numbers is: " (str(toberemoved))	
+		print "numpy list of random numbers is: " 
+		print (toberemoved)	
 		
         #Create new text file from which actual bad particle numbers will be stored
         tmp2='tmpfile122_sel.txt'
