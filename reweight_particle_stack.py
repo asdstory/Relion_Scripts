@@ -311,8 +311,8 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
 
             if remove_flag == 0:
                 particlewrite.write(particle_line)
-                if debug is True:
-                    print 'Writing particle %i to new file' %(counter)
+                #if debug is True:
+                    #print 'Writing particle %i to new file' %(counter)
 
                 if debug is True:
                     outtemp.write('%s\n' %(str(remove_flag)))
