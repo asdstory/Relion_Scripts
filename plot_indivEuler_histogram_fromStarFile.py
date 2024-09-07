@@ -69,7 +69,7 @@ def getRelionColumnIndex(star,rlnvariable):
             if len(line.split())>1:
                 if line.split()[0] == rlnvariable:
                     return line.split()[1][1:]
-                    print "The rlnvariable is at column #", (line.split()[1][1:])
+                    print "The rlnvariable is at column #", line.split()[1][1:]
 
         i=i+1
 
