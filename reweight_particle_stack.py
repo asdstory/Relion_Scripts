@@ -107,7 +107,7 @@ def getNumberofLinesRelionHeader(star):
     f1=open(star,'r')
     tot=0
     for line in f1:
-        if len(line) < 50:
+        if len(line) < 5000:
             tot=tot+1
     f1.close()
     print "total num of lines in header session = %i" %(tot)
@@ -124,7 +124,7 @@ def getNumberParticlesRelion(star):
             tot=tot+1
 
     f1.close()
-
+    print "total num of particles in star file particle session = %i" %(tot)
     return tot
 
 #==============================
