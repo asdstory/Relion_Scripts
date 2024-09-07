@@ -64,7 +64,7 @@ def getRelionColumnIndex(star,rlnvariable):
     while i<=50:
 
         line=linecache.getline(star,i)
-        print ($line)
+        print (line)
 
         if len(line)>0:
             if len(line.split())>1:
