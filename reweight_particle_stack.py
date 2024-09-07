@@ -257,8 +257,8 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
         particlewrite=open('%s_reweight.star' %(particle[:-5]),'w')
         counter=1
         for line in particleopen:
-            if counter<80:
-                if len(line)<50:
+            if counter<134:
+                if len(line)<5000:
                     particlewrite.write(line)
             counter=counter+1
 
@@ -277,7 +277,7 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
 
         for line in euler_open:
 
-            if len(line) < 50:
+            if len(line) < 500:
                 counter=counter+1
                 continue
 
