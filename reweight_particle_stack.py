@@ -238,9 +238,10 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
 	print(tmparray)
         toberemoved=np.random.choice(tmparray,remove,replace=False)
 	if debug is True:
-		print "numpy list of random numbers is: " 
+		print "numpy list of random numbers is: %i" %(len(toberemoved)) 
 		print (toberemoved)	
-		
+	
+	
         #Create new text file from which actual bad particle numbers will be stored
         tmp2='tmpfile122_sel.txt'
         if os.path.exists(tmp2):
