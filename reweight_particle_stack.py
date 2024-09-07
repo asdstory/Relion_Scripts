@@ -180,18 +180,18 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
             psi=float(l[int(colpsi)-1])
 
             flag=0
-            #if debug is True:
-		#print line
-                #print "rot=%s"%(rot)
-                #print colrot 
-		#print tilt
-                #print psi
-		#print 'rotlim1=%f' %(rotlim1)
-		#print 'rotlim2=%f' %(rotlim2)
-		#print tiltlim1
-		#print tiltlim2
-		#print psilim1
-		#print psilim2
+            if debug is True:
+		print line
+                print "rot=%s"%(rot)
+                print colrot 
+		print tilt
+                print psi
+		print 'rotlim1=%f' %(rotlim1)
+		print 'rotlim2=%f' %(rotlim2)
+		print tiltlim1
+		print tiltlim2
+		print psilim1
+		print psilim2
             if rotlim1 >= -180:
                 if rotlim2 <= 180:
 		    if rot>rotlim1 and rot<rotlim2:
