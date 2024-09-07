@@ -196,22 +196,22 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
                 if rotlim2 <= 180:
 		    if rot>rotlim1 and rot<rotlim2:
                         flag=1
-                        if debug is True:
-                            print 'flagged b/c of rot'
+                        #if debug is True:
+                            #print 'flagged b/c of rot'
 
             if tiltlim1 >=0:
                 if tiltlim2<=180:
                     if tilt>tiltlim1 and tilt<tiltlim2:
                         flag=1
-                        if debug is True:
-                            print 'flagged b/c of tilt'
+                        #if debug is True:
+                            #print 'flagged b/c of tilt'
 
             if psilim1 >= -180:
                 if psilim2 <= 180:
                     if psi>psilim1 and psi<psilim2:
                         flag=1
-                        if debug is True:
-                            print 'flagged b/c of psi'
+                        #if debug is True:
+                            #print 'flagged b/c of psi'
             if flag == 1:
 		badcounter=badcounter+1
 		out.write('%i\n'%(particlecounter))
