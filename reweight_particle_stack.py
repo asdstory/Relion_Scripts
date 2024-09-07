@@ -217,8 +217,8 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
             counter=counter+1
             particlecounter=particlecounter+1
 	if debug is True:
-		print badcounter	
-		print particlecounter
+		print "badcounter is : %i" %(badcounter)	
+		print "particle counter is: %i" %(particlecounter)
         out.close()
 
         #Get number of lines in tmpfile
