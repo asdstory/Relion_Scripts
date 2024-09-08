@@ -250,7 +250,7 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
         counter=1
 
         for line in tmpread:
-		number = int(line.strip())
+	    number = int(line.strip())
             if number in toberemoved:
                 tmp2out.write(line)
             counter=counter+1
