@@ -165,7 +165,7 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
 	particlecounter=1
 	if debug is True: 
 		print "total num particles=%i" %(tot)
-	headernum=getNumberofLinesRelionHeader(particle)
+	headernum=getNumberofLinesRelionHeader(euler)
         while counter <= tot+headernum:
             line=linecache.getline(euler,counter)
 
@@ -261,17 +261,22 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
         badparticlelist=np.loadtxt(tmp2)
 
         #Write header lines from edited file into new file header
-        particleopen=open(particle,'r')
-        particlewrite=open('%s_reweight.star' %(particle[:-5]),'w')
+        particleopen=open(euler,'r')
+        particlewrite=open('%s_reweight.star' %(euler[:-5]),'w')
         counter=1
+	particle_num=1
         for line in particleopen:
             if counter<134:
-                if len(line)<5000:
+                if len(line)<480:
                     particlewrite.write(line)
+	    else:
+		    if particle_num not in toberemoved:
+			    particlewrite.write(line)
+		    particle_num=particle_num+1
             counter=counter+1
 
         #Get number of lines in header for edited file
-        header_particle=getNumberofLinesRelionHeader(particle)
+        header_particle=getNumberofLinesRelionHeader(euler)
         if debug is True:
             outtemp=open('tmpout_flaggedtoberemoved.txt','w')
             outtemp.write('Number of lines in header: %i\n' %(header_particle))
@@ -285,7 +290,7 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
 
         for line in euler_open:
 
-            if len(line) < 500:
+            if len(line) < 480: 
                 counter=counter+1
                 continue
 
@@ -311,7 +316,7 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
             particle_num=counter
 
             #Get line from file
-            particle_line=linecache.getline(particle,particle_num)
+            particle_line=linecache.getline(euler,particle_num)
 
             #if debug is True:
                 #print 'Particle %i is on line %i in %s' %(counter,particle_num,particle)
