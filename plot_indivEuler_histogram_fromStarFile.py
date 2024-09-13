@@ -87,8 +87,11 @@ def plotEuler_single(star,colnum,debug,rln):
     #open for writing into new tmp file without header
     o1=open(tmp,'w')
 
+    string = "@"
+
     for line in f1:
-        if len(line)<50:
+        if string not in line: 
+        #if len(line)<50:
             continue
         o1.write(line)
 
@@ -136,8 +139,11 @@ def plotEuler_double(star,colnum1,rln1,colnum2,rln2,debug):
     #open for writing into new tmp file without header
     o1=open(tmp,'w')
 
+    string = "@"
+        
     for line in f1:
-        if len(line)<50:
+        if string not in line:
+        #if len(line)<50:
             continue
         o1.write(line)
 
