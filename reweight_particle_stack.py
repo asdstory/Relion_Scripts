@@ -123,7 +123,7 @@ def getNumberParticlesRelion(star):
     string = "@"
 
     for line in f1:
-	if string not in line:
+	if string in line:
         #if len(line) > 480:
             tot=tot+1
 
