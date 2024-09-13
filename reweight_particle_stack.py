@@ -106,8 +106,10 @@ def getRelionColumnIndex(star,rlnvariable):
 def getNumberofLinesRelionHeader(star):
     f1=open(star,'r')
     tot=0
+    string = "@"
     for line in f1:
-        if len(line) < 480:
+	if string not in line:
+        #if len(line) < 480:
             tot=tot+1
     f1.close()
     print "total num of lines in header session = %i" %(tot)
@@ -118,9 +120,11 @@ def getNumberParticlesRelion(star):
 
     f1=open(star,'r')
     tot=0
+    string = "@"
 
     for line in f1:
-        if len(line) > 480:
+	if string not in line:
+        #if len(line) > 480:
             tot=tot+1
 
     f1.close()
@@ -163,13 +167,16 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
         counter=1
         badcounter=1
 	particlecounter=1
+	string = "@"
+	
 	if debug is True: 
 		print "total num particles=%i" %(tot)
 	headernum=getNumberofLinesRelionHeader(euler)
         while counter <= tot+headernum:
             line=linecache.getline(euler,counter)
 
-            if len(line) < 480:
+	    if string not in line: 
+            #if len(line) < 480:
                 counter=counter+1
 		continue
 
@@ -265,10 +272,13 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
         particlewrite=open('%s_reweight.star' %(euler[:-5]),'w')
         counter=1
 	particle_num=1
+	string = "@"
         for line in particleopen:
-            if counter<134:
-                if len(line)<480:
-                    particlewrite.write(line)
+	    if string not in line:
+		particlewrite.write(line)
+            #if counter<134:
+            #    if len(line)<480:
+            #        particlewrite.write(line)
 	    else:
 		    if particle_num not in toberemoved:
 			    particlewrite.write(line)
@@ -287,10 +297,11 @@ def reweight_starfile(euler,particle,rotlim1,rotlim2,tiltlim1,tiltlim2,psilim1,p
 
         #Particlesremoved
         outtmp=open('%s_linesRemoved.txt'%(tmp[:-4]),'w')
+	string = "@"
 
         for line in euler_open:
-
-            if len(line) < 480: 
+	    if string not in line:
+            #if len(line) < 480: 
                 counter=counter+1
                 continue
 
